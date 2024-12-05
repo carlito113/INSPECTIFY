@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h3>Add Product</h3>
+      <form class="form-control" (ngSubmit)="addProduct()">
+        <div>
+          <label class="fs-5" for="product">Product Name:</label>
+          <input class="input-group-text" id="product" [(ngModel)]="product" name="product" required />
+        </div>
+        <div>
+          <label for="quantity">Quantity:</label>
+          <input class="input-group-text" id="quantity" type="number" [(ngModel)]="quantity" name="quantity" required />
+        </div>
+        <div>
+          <label for="amount">Amount:</label>
+          <input class="input-group-text" id="amount" [(ngModel)]="amount" name="amount" required />
+        </div>
+        <button type="submit" class="btn btn-primary m-4">Add Product</button>
+      </form>
+    </div>
+    
+    <p *ngIf="responseMessage">{{ responseMessage }}</p>
+  </div>
+  
+</div>

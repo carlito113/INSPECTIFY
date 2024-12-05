@@ -1,0 +1,273 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Navigation</title>
+ 
+  <style>
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .navigation {
+      width: 250px;
+      background-color: #343a40;
+      color: #fff;
+      transition: all 0.3s;
+    }
+    .navigation.collapsed {
+      width: 80px;
+    }
+    .navigation ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .navigation ul li {
+      padding: 15px;
+      text-align: left;
+    }
+    .navigation ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    .navigation ul li a .icon {
+      margin-right: 10px;
+    }
+    .navigation.collapsed .title {
+      display: none;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+    .burger-menu {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .burger-menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+      }
+      .navigation {
+        position: fixed;
+        height: 100%;
+        z-index: 1050;
+      }
+    }
+  </style>
+  <style>
+    .navigation.collapsed .title {
+      display: none;
+    }
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+    .burger-menu {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .burger-menu {
+        display: block;
+        padding: 15px;
+        cursor: pointer;
+      }
+      .navigation {
+        position: fixed;
+        height: 100%;
+        z-index: 1050;
+      }
+    }
+  </style>
+</head> -->
+
+
+  <!-- <div class="container-fluid">
+
+    <div class="navigation" id="sidebar">
+      <div class="burger-menu" click="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+      </div> 
+      <ul>
+        <li class="navTop">
+          <a routerLink="/s">
+            <span class="icon" alt="logo"><i class="fa-solid fa-cloud"></i></span>
+            <img src="Logo 2.png" class="logo" alt="Logo" />
+            <span class="Maintitle">INSPECTIFY</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/revenue">
+            <span class="icon"><i class="fa-solid fa-money-bill"></i></span>
+            <span class="title">Revenue</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/expense">
+            <span class="icon"><i class="fa-solid fa-arrow-trend-down"></i></span>
+            <span class="title">Expense</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/sales">
+            <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+            <span class="title">Sales</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/weekly">
+            <span class="icon"><i class="fa-solid fa-calendar-week"></i></span>
+            <span class="title">Weekly</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/monthly">
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            <span class="title">Monthly</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/loss">
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            <span class="title">Loss</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/user">
+            <span class="icon"><i class="fa-solid fa-user-large"></i></span>
+            <span class="title">User</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/logout">
+            <span class="icon"><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+            <span class="title">Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <nav class="navbar navbar-dark bg-dark h-100 justify-content-around">
+        <div class="text text-white text-center">
+          <h2>THE PARENT</h2>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+      
+    </div>
+  </div> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
+
+  <div style="display: flex;" class="parent">
+    <div [ngClass]="{'sidebar': true, 'open': isOpen}" id="sidebar">
+      <button class="toggle-btn" (click)="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul>
+        <!-- <li class="navTop"> -->
+          <a routerLink="/s">
+            <!-- <span class="icon" alt="logo"><i class="fa-solid fa-cloud"></i></span> -->
+            <!-- <img src="Logo 2.png" class="logo" alt="Logo" /> -->
+            <span class="text-center Maintitle " style="color: white;">INSPECTIFY</span>
+          </a>
+        <!-- </li> -->
+        
+          <a routerLink="/">
+            <li style = "margin-top: 60px;">
+              <i class="fa-solid fa-house"></i>
+              <span class="title">Dashboard</span>
+            </li>
+          </a>
+        
+        
+          <a routerLink="/revenue" >
+            <li routerLinkActive="active ">
+              <i class="fa-solid fa-money-bill"></i>
+              <span class="title ">Revenue</span>
+            </li>
+          </a>
+        
+        
+          <a routerLink="/expense" >
+            <li routerLinkActive="active">
+              <i class="fa-solid fa-arrow-trend-down"></i>
+              <span class="title">Expense</span>
+            </li>
+          </a>
+        
+        
+          <a routerLink="/sales" >
+            <li routerLinkActive="active">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="title">Sales</span>
+            </li>
+          </a>
+        
+        
+          <a routerLink="/weekly" >
+            <li routerLinkActive="active">
+              <i class="fa-solid fa-calendar-week"></i>
+              <span class="title">Weekly</span>
+            </li>
+          </a>
+        
+        <!-- <li>
+          <a routerLink="/monthly">
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            <span class="title">Monthly</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/loss">
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            <span class="title">Loss</span>
+          </a>
+        </li> -->
+        
+          <a routerLink="/user" routerLinkActive="active">
+            <li>
+              <i class="fa-solid fa-user-large"></i>
+              <span class="title">User</span>
+            </li>
+          </a>
+        
+        
+          <a routerLink="/logout" routerLinkActive="active">
+            <li>
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              <span class="title">Log Out</span>
+            </li>
+          </a>
+        
+
+      </ul>
+    </div>
+    <div [ngClass]="{'content': true, 'content-expanded': isOpen, 'content-collapsed': !isOpen}"style="display: inline-block; width: 85%;" >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap JS -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlT4IKSWxS4W+kE+9kOVVLYLrEV2z3z7BCkTwFvdDMF4Nf+8IH5gxaE0aj4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhG81rLvY6UBZxV7L6CkKUJbKUh2KcD6OLSHii8tHJjIVRx2ncXImB07jRMp" crossorigin="anonymous"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('collapsed');
+    }
+  </script>
+</body>
+</html> -->

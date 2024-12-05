@@ -1,0 +1,95 @@
+
+.card{
+    border-radius: 10px;
+    width: 450px;
+}
+/* Card Styling */
+.custom-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.custom-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.custom-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Card Text */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-text.text-success {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.card-text.text-primary {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Button Styling */
+.btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5a5a5a;
+}
+
+/* Layout Styling */
+.container {
+    margin-top: 30px;
+}
+
+.row.g-4 {
+    display: flex;
+    justify-content: center;
+    /* gap: 30px; */
+}
+
+.col-md-6 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .col-md-6 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}

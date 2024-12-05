@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Card Styling */
+.custom-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.custom-card .card-header {
+    background: linear-gradient(45deg, #2a2a2b, #262930);
+    border-radius: 15px 15px 0 0;
+}
+
+.custom-card .card-header h2 {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+/* Week Card Styling */
+.custom-week-card {
+    background-color: #343a40;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-week-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.custom-week-card .card-header {
+    background-color: #212529;
+    border-radius: 10px 10px 0 0;
+}
+
+.custom-week-card .card-body {
+    background-color: #495057;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Text and Currency Styling */
+.custom-week-card h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.custom-week-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.text-white {
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .custom-card {
+        margin-bottom: 20px;
+    }
+
+    .custom-week-card h5 {
+        font-size: 1rem;
+    }
+    
+    .custom-week-card .card-header h3 {
+        font-size: 1.2rem;
+    }
+}

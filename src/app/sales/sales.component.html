@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+    <!-- Sales Table Section -->
+    <div class="row mt-5 px-4">
+        <div class="col-12">
+            <!-- Card for Table -->
+            <div class="card shadow-lg rounded-3 custom-card">
+                <div class="card-header bg-dark text-white rounded-3">
+                    <h2 class="mb-0" style="font-weight: 600; letter-spacing: 1px;">Sales Table</h2>
+                </div>
+                <div class="card-body p-4">
+                    <!-- Table Section -->
+                    <table class="table table-bordered table-striped custom-table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let st of revenues">
+                                <td>{{ st.created_at | date: 'MM/dd/yyyy hh:mm a' }}</td>
+                                <td>{{ st.product }}</td>
+                                <td>{{ st.quantity }}</td>
+                                <td>{{ st.amount | currency: 'PHP' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Total Sales Section -->
+                    <div class="mt-4 text-center">
+                        <h4 class="text-dark">Total Quantity Sold: {{ getTotalQuantity() }}</h4>
+                        <h5 class="text-secondary">Total Sales: {{ getTotalSales() | currency: 'PHP' }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

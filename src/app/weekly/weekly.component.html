@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row mt-5 px-4">
+        <div class="col-12">
+            <!-- Card for Weekly Accumulated Profit -->
+            <div class="card shadow-lg rounded-4 custom-card">
+                <div class="card-header bg-dark text-white rounded-4">
+                    <h2 class="mb-0" style="font-weight: 600;">Weekly Accumulated Profit</h2>
+                </div>
+                <div class="card-body">
+                    <div *ngFor="let week of weeklyProfit">
+                        <div class="card shadow-sm custom-week-card mb-4">
+                          <div class="card-header bg-dark text-white rounded-3">
+                            <h3 class="mb-0">Week: {{ week.formatted_week }}</h3>
+                          </div>
+                          <div class="card-body rounded-3 bg-dark text-white">
+                            <p>Total Revenue: {{ week.total_amount | currency: 'PHP' : 'symbol' }}</p>
+                            <p>Total Expense: {{ week.total_expense | currency: 'PHP' : 'symbol' }}</p>
+                            <h5>Profit: {{ week.profit | currency: 'PHP' : 'symbol' }}</h5>
+                          </div>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

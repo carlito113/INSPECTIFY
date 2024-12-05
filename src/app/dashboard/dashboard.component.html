@@ -1,0 +1,69 @@
+<div class="container my-3">
+  <div class="row g-4 justify-content-center align-items-center">
+   
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card shadow p-1.5 mb-3 bg-body rounded custom-card">
+        <div class="card-body text-center">
+          <div class="mb-3">
+            <i class="bi bi-cash-stack text-success custom-icon"></i>
+          </div>
+          <h4 class="card-title fw-bold">Revenue</h4>
+          <p class="card-text">Monitor your revenues effectively.</p>
+          <h5 class="card-text text-success">
+            {{ totalRevenue !== null ? (totalRevenue | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+          </h5>
+          <a routerLink="/revenue" class="btn btn-dark mt-3">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card shadow p-1.5 mb-3 bg-body rounded custom-card">
+        <div class="card-body text-center">
+          <div class="mb-3">
+            <i class="bi bi-wallet2 text-danger custom-icon"></i>
+          </div>
+          <h4 class="card-title fw-bold">Expense</h4>
+          <p class="card-text">Monitor your expenditures effectively.</p>
+          <h5 class="card-text text-success">
+            {{ totalExpense !== null ? (totalExpense | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+          </h5>
+          <a routerLink="/expense" class="btn btn-dark mt-3">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card shadow p-1.5 mb-3 bg-body rounded custom-card">
+        <div class="card-body text-center">
+          <div class="mb-3">
+            <i class="bi bi-bar-chart text-primary custom-icon"></i>
+          </div>
+          <h4 class="card-title fw-bold">Sales</h4>
+          <p class="card-text">Track your sales performance.</p>
+          <h1 class="card-text text-primary">
+            {{ totalSales !== null ? (totalSales) : 'Loading....' }}
+          </h1>
+          <a routerLink="/sales" class="btn btn-dark mt-3">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="card shadow p-1.5 mb-3 bg-body rounded custom-card">
+        <div class="card-body text-center">
+          <div class="mb-3">
+            <i class="bi bi-graph-down text-warning custom-icon"></i>
+          </div>
+          <h4 class="card-title fw-bold">Loss</h4>
+          <p class="card-text">Analyze your losses to improve strategy.</p>
+          <h5 class="card-text text-success">
+            {{ totalLoss !== null ? (totalLoss | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+          </h5>
+          <a routerLink="/loss" class="btn btn-dark mt-3">View Details</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
