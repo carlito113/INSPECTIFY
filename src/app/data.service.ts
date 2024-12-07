@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable , signal} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
@@ -57,14 +57,16 @@ export class DataService {
     return this.http.get<any>(`${this.baseUrl}/weekly-expense`);
   }
 
-  private lossSource = new BehaviorSubject<number>(0); // Initial loss value
-  currentLoss = this.lossSource.asObservable();
-
-  // Method to update the loss value
-  updateLoss(loss: number): void {
-    this.lossSource.next(loss);
+  getProfitLoss(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/profitloss`);
   }
 
+  private lossSubject = new BehaviorSubject<number>(0); // Initial loss value
+  loss$ = this.lossSubject.asObservable();
+
+  updateLoss(loss: number): void {
+    this.lossSubject.next(loss); // Emit the new loss value
+  }
 
 }
 

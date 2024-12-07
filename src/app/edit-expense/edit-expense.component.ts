@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { ExpenseService } from '../expense.service';
+import { identity, retry } from 'rxjs';
 
 @Component({
   selector: 'app-edit-expense',
@@ -14,7 +16,7 @@ export class EditExpenseComponent {
   expenseIdtoEdit: number | null = null;
   responseMessage = '';
 
-  constructor(private dataService:DataService){
+  constructor(private dataService:DataService, private expenseService: ExpenseService){
     this.fetchExpense(); 
   }
 
@@ -84,4 +86,14 @@ export class EditExpenseComponent {
       this.responseMessage = 'Please fill all fields.';
     }
   }
+
+  deleteExpense(id: any) {
+    this.expenseService.deleteExpense(id).subscribe((result) => {
+        result;
+        console.log("Expense succesfully deleted")
+        this.fetchExpense()
+      })
+    }
+    
+    
 }

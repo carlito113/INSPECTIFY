@@ -1,6 +1,5 @@
 <div class="container my-3">
   <div class="row g-4 justify-content-center align-items-center">
-   
     <div class="col-md-6 d-flex justify-content-center">
       <div class="card shadow p-1.5 mb-3 bg-body rounded custom-card">
         <div class="card-body text-center">
@@ -10,7 +9,7 @@
           <h4 class="card-title fw-bold">Revenue</h4>
           <p class="card-text">Monitor your revenues effectively.</p>
           <h5 class="card-text text-success">
-            {{ totalRevenue !== null ? (totalRevenue | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+            {{ totalRevenue !== null ? (totalRevenue | currency: 'PHP' : 'symbol') : 'Loading....' }}
           </h5>
           <a routerLink="/revenue" class="btn btn-dark mt-3">View Details</a>
         </div>
@@ -26,7 +25,7 @@
           <h4 class="card-title fw-bold">Expense</h4>
           <p class="card-text">Monitor your expenditures effectively.</p>
           <h5 class="card-text text-success">
-            {{ totalExpense !== null ? (totalExpense | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+            {{ totalExpense !== null ? (totalExpense | currency: 'PHP' : 'symbol') : 'Loading....' }}
           </h5>
           <a routerLink="/expense" class="btn btn-dark mt-3">View Details</a>
         </div>
@@ -57,13 +56,11 @@
           </div>
           <h4 class="card-title fw-bold">Loss</h4>
           <p class="card-text">Analyze your losses to improve strategy.</p>
-          <h5 class="card-text text-success">
-            {{ totalLoss !== null ? (totalLoss | currency: 'PHP' : 'symbol' : '1.0-0') : 'Loading....' }}
+          <h5 *ngFor="let loss of totalLoss" class="card-text fs-3 text-danger">
+            {{loss.loss | currency: 'PHP' : 'symbol' }}
           </h5>
-          <a routerLink="/loss" class="btn btn-dark mt-3">View Details</a>
         </div>
       </div>
     </div>
-
   </div>
 </div>

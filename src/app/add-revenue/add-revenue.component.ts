@@ -47,6 +47,9 @@ export class AddRevenueComponent {
     }
   }
 
+
+  
+
   resetForm(): void {
     this.product = '';
     this.quantity = null;

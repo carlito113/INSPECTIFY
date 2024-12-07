@@ -15,4 +15,10 @@ export class ExpenseService {
   addProduct(productData: { product: string; quantity: number; amount: number }): Observable<any> {
     return this.http.post<any>(this.apiUrl, productData); // Use the POST method to `/products`
   }
+
+  deleteExpense
+  (id:number): Observable<any>{
+    return this.http.delete(`http://127.0.0.1:8000/api/deleteExpense/${id}`)
+  }
+  
 }

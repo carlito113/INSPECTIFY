@@ -11,11 +11,12 @@ import { PdfService } from '../pdf.service';
 export class RevenueComponent {
   revenues:any;
 
-    constructor(private dataService:DataService, private pdfService: PdfService){
+    constructor(private dataService:DataService){
     }
 
     ngOnInit(): void{
       this.getRevenueData();
+      
     }
 
     getRevenueData(){
@@ -26,18 +27,8 @@ export class RevenueComponent {
       });
     }
 
-    download() {
-      this.pdfService.downloadPdf().subscribe((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Revenue.pdf';
-        document.body.appendChild(a); // Required for Firefox
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-      });
-    }
+    
+
     
 }
 

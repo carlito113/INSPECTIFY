@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { WeeklyComponent } from '../weekly/weekly.component';
-import { LossComponent } from '../loss/loss.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +24,7 @@ export class DashboardComponent {
     this.getTotalAmount(); // Call the method properly
     this.getTotalSales(); // Call the method properly
     this.getTotalExpense(); // Call the method properly
-    this.getTotalSales();
+    this.getLoss();
 
   }
 
@@ -64,13 +64,10 @@ export class DashboardComponent {
     );
   }
 
-getloss(): void {
-  const totalLoss = this.weeklyProfit.reduce((sum, week) => sum + week.loss, 0);
-  this.dataService.updateLoss(totalLoss);
-  console.log('Total Loss:', totalLoss);
-    console.log('Total Loss in Dashboard:', this.totalLoss);
-    console.log("Hwllo")
-
-
-}
+  getLoss(): void {
+    this.dataService.getProfitLoss().subscribe((loss) => {
+      this.totalLoss = loss;
+      console.log('Updated Total Loss:', this.totalLoss);
+    });
+  }
 }

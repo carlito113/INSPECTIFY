@@ -14,7 +14,6 @@ import { ExpenseComponent } from './expense/expense.component';
 import { SalesComponent } from './sales/sales.component';
 import { WeeklyComponent } from './weekly/weekly.component';
 import { MonthlyComponent } from './monthly/monthly.component';
-import { LossComponent } from './loss/loss.component';
 import { AddRevenueComponent } from './add-revenue/add-revenue.component';
 import { EditRevenueComponent } from './edit-revenue/edit-revenue.component';
 import { CommonModule } from '@angular/common';
@@ -30,7 +29,6 @@ const appRoutes: Routes = [
   { path: 'sales', component: SalesComponent },
   { path: 'weekly', component: WeeklyComponent },
   { path: 'monthly', component: MonthlyComponent },
-  {path: 'loss', component: LossComponent}, 
   {path: 'add-revenue', component: AddRevenueComponent},
   {path: 'edit-revenue', component: EditRevenueComponent},
   {path: 'edit-expense', component: EditExpenseComponent},
@@ -46,7 +44,6 @@ const appRoutes: Routes = [
     SalesComponent,
     WeeklyComponent,
     MonthlyComponent,
-    LossComponent,
     AddRevenueComponent,
     EditRevenueComponent,
     EditExpenseComponent

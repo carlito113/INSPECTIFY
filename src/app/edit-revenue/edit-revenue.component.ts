@@ -8,10 +8,12 @@ import { RevenueService } from '../revenue.service';
   styleUrl: './edit-revenue.component.css'
 })
 export class EditRevenueComponent {
-  revenues: any[] = []; // List of revenue records
+  revenues: any[] = [];
   product = '';
   quantity: number | null = null;
-  amount: number | null = null;
+  price: number | null = null; // Add price
+  amount =  0;
+  id = '';
   revenueIdToEdit: number | null = null;
   responseMessage = '';
 
@@ -25,21 +27,31 @@ export class EditRevenueComponent {
     });
   }
 
-  editRevenue(id: number, existingProduct: string, existingQuantity: number, existingAmount: number): void {
+  editRevenue(id: number, existingProduct: string, existingQuantity: number, existingPrice: number): void {
     this.revenueIdToEdit = id;
     this.product = existingProduct;
     this.quantity = existingQuantity;
-    this.amount = existingAmount;
+    this.price = existingPrice; // Set price from existing amount
+    this.updateAmount(); // Recalculate the amount based on quantity and price
+  }
+
+
+  deleteRevenue(id: any){
+    this.revenueService.deleteRevenue(id).subscribe((result) => {
+      result;
+      console.log('Revenue record deleted successfully:');
+      this.fetchRevenues();
+    })
   }
 
   saveRevenueEdit(): void {
-    if (this.revenueIdToEdit !== null && this.product && this.quantity !== null && this.amount !== null) {
+    if (this.revenueIdToEdit !== null && this.product && this.quantity !== null && this.price !== null) {
       const updatedRevenue = {
         product: this.product,
         quantity: this.quantity,
-        amount: this.amount,
+        amount: this.amount, // Total amount (quantity * price)
       };
-
+  
       this.revenueService.updateRevenue(this.revenueIdToEdit, updatedRevenue).subscribe(
         (response) => {
           this.responseMessage = response;
@@ -57,11 +69,19 @@ export class EditRevenueComponent {
     }
   }
 
+  updateAmount(): void {
+    if (this.quantity !== null && this.price !== null) {
+      this.amount = this.quantity * this.price; // Calculate amount
+    }
+  }
+
   resetForm(): void {
     this.product = '';
     this.quantity = null;
-    this.amount = null;
+    this.price = null;
+    this.amount = 0;
     this.revenueIdToEdit = null;
+    this.id = '';
   }
 
   addProduct(): void {

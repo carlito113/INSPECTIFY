@@ -29,9 +29,10 @@ export class RevenueService {
     return this.http.put<any>(`http://127.0.0.1:8000/api/Revenue/${id}`, revenueData);
   }
 
-  getWeeklyRevenue(): Observable<any> {
-    return this.http.get('http://your-laravel-api.test/api/weekly');
-  }  
-  
-  
+
+  deleteRevenue
+  (id: number): Observable<any> {
+    return this.http.delete(`http://127.0.0.1:8000/api/deleteRevenue/${id}`);
+  }
+
 }
